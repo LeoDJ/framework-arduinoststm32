@@ -824,7 +824,7 @@ void HAL_UART_ErrorCallback(UART_HandleTypeDef *huart)
   * @param  None
   * @retval None
   */
-#if defined(USART1_BASE)
+#if defined(USART1_BASE) && !defined(OVERWRITE_USART1_IRQHandler)
 void USART1_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(USART1_IRQn);
@@ -837,7 +837,7 @@ void USART1_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(USART2_BASE)
+#if defined(USART2_BASE) && !defined(OVERWRITE_USART2_IRQHandler)
 void USART2_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(USART2_IRQn);
@@ -850,7 +850,7 @@ void USART2_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(USART3_BASE)
+#if defined(USART3_BASE) && !defined(OVERWRITE_USART3_IRQHandler)
 void USART3_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(USART3_IRQn);
@@ -900,7 +900,7 @@ void USART3_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART4_BASE)
+#if defined(UART4_BASE) && !defined(OVERWRITE_UART4_IRQHandler)
 void UART4_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART4_IRQn);
@@ -914,7 +914,7 @@ void UART4_IRQHandler(void)
   * @retval None
   */
 #if defined(STM32L0xx)
-#if defined(USART4_BASE) || defined(USART5_BASE)
+#if (defined(USART4_BASE) || defined(USART5_BASE)) && !defined(OVERWRITE_USART4_5_IRQHandler)
 void USART4_5_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(USART4_IRQn);
@@ -933,7 +933,7 @@ void USART4_5_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART5_BASE)
+#if defined(UART5_BASE) && !defined(OVERWRITE_UART5_IRQHandler)
 void UART5_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART5_IRQn);
@@ -946,7 +946,7 @@ void UART5_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(USART6_BASE) && !defined(STM32F0xx)
+#if defined(USART6_BASE) && !defined(STM32F0xx) && !defined(OVERWRITE_USART6_IRQHandler)
 void USART6_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(USART6_IRQn);
@@ -959,7 +959,7 @@ void USART6_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(LPUART1_BASE)
+#if defined(LPUART1_BASE) && !defined(OVERWRITE_LPUART1_IRQHandler)
 void LPUART1_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(LPUART1_IRQn);
@@ -972,7 +972,7 @@ void LPUART1_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART7_BASE)
+#if defined(UART7_BASE) && !defined(OVERWRITE_UART7_IRQHandler)
 void UART7_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART7_IRQn);
@@ -985,7 +985,7 @@ void UART7_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART8_BASE)
+#if defined(UART8_BASE) && !defined(OVERWRITE_UART8_IRQHandler)
 void UART8_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART8_IRQn);
@@ -998,7 +998,7 @@ void UART8_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART9_BASE)
+#if defined(UART9_BASE) && !defined(OVERWRITE_UART9_IRQHandler)
 void UART9_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART9_IRQn);
@@ -1011,7 +1011,7 @@ void UART9_IRQHandler(void)
   * @param  None
   * @retval None
   */
-#if defined(UART10_BASE)
+#if defined(UART10_BASE) && !defined(OVERWRITE_UART10_IRQHandler)
 void UART10_IRQHandler(void)
 {
   HAL_NVIC_ClearPendingIRQ(UART10_IRQn);
