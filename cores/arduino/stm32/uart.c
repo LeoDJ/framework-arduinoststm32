@@ -777,6 +777,10 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 {
   serial_t *obj = get_serial_obj(huart);
 
+  // if uart was not initialized via Arduino function, handle false pointer exception
+  if(obj->uart != huart->Instance)
+    return;
+
   if (obj && obj->tx_callback(obj) != -1) {
     if (HAL_UART_Transmit_IT(huart, &obj->tx_buff[obj->tx_tail], 1) != HAL_OK) {
       return;
